@@ -1,20 +1,10 @@
-# sinatra-template
+# Random Dog Images
 
-Use this repository to create new Sinatra apps. 
+Utilizes the API at: `https://dog.ceo/dog-api/documentation/`
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
+Gets you a random image of a dog or a random image of a dog based on breed
 
-```ruby
-require "sinatra/activerecord"
-```
-
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+To launch, run the following script
+```bin/server```
 
 Some rights reserved — see [LICENSE.txt](LICENSE.txt)

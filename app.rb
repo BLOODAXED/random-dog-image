@@ -1,9 +1,46 @@
 require "sinatra"
 require "sinatra/reloader"
+require "http"
+require "json"
+
+URL = "https://dog.ceo/api"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  
+  
+  erb(:home, {:layout => :layout} )
+
+end
+
+get("/any") do
+
+  route = "#{URL}/breeds/image/random"
+
+  @dog = JSON.parse(HTTP.get(route))["message"]
+
+  erb(:any, {:layout => :layout} )
+
+end
+
+get("/:breed") do
+
+  @breed = params["breed"]
+  route = "#{URL}/breed/#{@breed}/images/random"
+
+  @dog = JSON.parse(HTTP.get(route))["message"]
+
+  erb(:breed, {:layout => :layout} )
+
+end
+
+get("/:breed/:sub") do
+
+  @breed = params["breed"]
+  @sub = params["sub"]
+  route = "#{URL}/breed/#{@breed}/#{@sub}/images/random"
+
+  @dog = JSON.parse(HTTP.get(route))["message"]
+
+  erb(:subbreed, {:layout => :layout} )
+
 end
