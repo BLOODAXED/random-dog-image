@@ -7,6 +7,9 @@ URL = "https://dog.ceo/api"
 
 get("/") do
   
+  route = "#{URL}/breeds/list/all"
+
+  @dogs = JSON.parse(HTTP.get(route))["message"]
   
   erb(:home, {:layout => :layout} )
 
