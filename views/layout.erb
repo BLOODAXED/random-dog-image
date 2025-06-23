@@ -10,12 +10,24 @@
   <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
       <h2>Random Dog Image</h2>
     </header>
     <ul>
-      <a href="/"><li tabindex="0" class="icon-dashboard"><span>Breed List</span></li></a>
-      <a href="/any"><li tabindex="0" class="icon-dog"><span>Random Dog</span></li></a>
+      <a href="/">
+        <li tabindex="0" class="icon-dashboard"><span>Breed List</span></li>
+      </a>
+      <a href="/any">
+        <li tabindex="0" class="icon-dog"><span>Random Dog</span></li>
+      </a>
+      <li><form action="/search">
+        <label for="breed">
+          Search By Breed
+        </label>
+        <input id="breed" name="breed" text="text" placeholder="breed sub-breed">
+        <button>
+          Go!
+        </button>
+      </form></li>
     </ul>
   </nav>
 

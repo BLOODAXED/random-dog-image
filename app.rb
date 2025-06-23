@@ -25,6 +25,14 @@ get("/any") do
 
 end
 
+get("/search") do
+
+  @breed = params["breed"]
+  @breed = @breed.gsub(" ", "/")
+
+  redirect to("/#{@breed}")
+end
+
 get("/:breed") do
 
   @breed = params["breed"]
