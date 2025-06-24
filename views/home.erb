@@ -1,6 +1,6 @@
 <div class="dogs">
   <% @dogs.each do |x| %>
-    <a href="<%= "/#{x[0]}}" %>"><div><%= x[0] %></div></a>
+    <a href="<%= "/#{x[0]}" %>"><div><%= x[0] %></div></a>
     <% if x[1].size > 0 %>
       <% x[1].each do |y| %>
         <a href="<%= "/#{x[0]}/#{y}" %>"><div><%= "#{y} #{x[0]}" %></div></a>
